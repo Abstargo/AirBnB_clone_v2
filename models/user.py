@@ -3,7 +3,7 @@
 from models.base_model import BaseModel
 from models.base_model import Base
 from sqlalchemy import Column
-from sqlalchemy import Srtring
+from sqlalchemy import String
 from sqlalchemy.orm import relationship
 
 
@@ -15,5 +15,5 @@ class User(BaseModel, Base):
     password = Column(String(128), nullable=False)
     first_name = Column(String(128))
     last_name = Column(String(128))
-    places = relationship("Plaace", backref="user", cascade="delete")
+    places = relationship("Place", backref="user", cascade="delete")
     reviews = relationship("Review", backref="user", cascade="delete")
